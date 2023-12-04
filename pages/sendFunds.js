@@ -2,6 +2,7 @@
 // the essential modules to interact with frontend are below imported.
 // ethers is the core module that makes RPC calls using any wallet provider like Metamask which is esssential to interact with Smart Contract
 import { ethers } from "ethers";
+import Link from 'next/link';
 // A single Web3 / Ethereum provider solution for all Wallets
 import Web3Modal from "web3modal";
 // yet another module used to provide rpc details by default from the wallet connected
@@ -118,7 +119,7 @@ export default function SendFunds() {
 
 	useEffect(() => {
 		initWallet();
-	}, []);
+	}, [initWallet]);
 	return (
 		<>
 			<link
@@ -127,7 +128,8 @@ export default function SendFunds() {
 			/>
 			<div className="m-6 space-y-4">
 				<h1 className="text-white-700 text-5xl font-bold text-center mt-40">
-					<a href="/">Smart Contract Wallet</a>
+					
+					<Link href="/">Smart Contract Wallet</Link>
 				</h1>
 				{account ? (
 					<div className="flex flex-col items-center justify-center">
@@ -212,7 +214,7 @@ export default function SendFunds() {
 				) : (
 					<>
 						<h1 className="text-red-700 text-5xl font-bold text-center !mb-20">
-							Account doesn't exist
+							Account doesn&apos;t exist
 						</h1>
 						<button
 							className="flex bg-black-500 hover:bg-black-700 text-white py-2 px-4 rounded-full text-xl font-bold text-center justify-center w-2/12 mx-auto"

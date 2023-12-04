@@ -2,6 +2,7 @@
 // the essential modules to interact with frontend are below imported.
 // ethers is the core module that makes RPC calls using any wallet provider like Metamask which is esssential to interact with Smart Contract
 import { ethers } from "ethers";
+import Link from 'next/link';
 // A single Web3 / Ethereum provider solution for all Wallets
 import Web3Modal from "web3modal";
 // yet another module used to provide rpc details by default from the wallet connected
@@ -71,7 +72,7 @@ export default function CreateAccount() {
 
 	useEffect(() => {
 		initWallet();
-	}, []);
+	}, [initWallet]);
 	return (
 		<>
 			{err ? (

@@ -1,4 +1,5 @@
 import { ethers } from "ethers";
+import Link from 'next/link';
 // A single Web3 / Ethereum provider solution for all Wallets
 import Web3Modal from "web3modal";
 // yet another module used to provide rpc details by default from the wallet connected
@@ -65,11 +66,12 @@ const Home = () => {
 
 	useEffect(() => {
 		initWallet();
-	}, []);
+	}, [initWallet]);
 	return (
 		<>
 			<h1 className="text-black-700 text-5xl font-bold text-center m-40">
-				<a href="/">Smart Wallet Account Abstraction</a>
+				
+				<Link href="/">Smart Wallet Account Abstraction</Link>
 			</h1>
 			{account ? (
 				<>
